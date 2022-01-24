@@ -3,10 +3,10 @@ import Head from 'next/head'
 const Home = () => {
     return (
         <>
-            <Head>
+            {/* <Head>
                 <title>MICC Web App</title>
                 <link rel="icon" href="/favicon.ico" />
-            </Head>
+            </Head> */}
 
             <main >HEloo</main>
         </>
@@ -14,3 +14,12 @@ const Home = () => {
 }
 
 export default Home
+
+export async function getServerSideProps(context) {
+    return {
+        redirect: {
+            destination: '/auth/login',
+            permanent: false,
+        },
+    }
+}
