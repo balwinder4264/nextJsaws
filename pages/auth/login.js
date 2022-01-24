@@ -31,7 +31,7 @@ const Login = () => {
                             type={"email"}
                             className=' pl-16 text-sm placeholder-black placeholder:opacity-40 opacity-60   font-Nunito-Light   pr-4 w-full py-2 focus:outline-none shadow-lg rounded-xl '
                             style={{ width: 320, height: 48, backgroundColor: "white", boxShadow: "0px 3px 6px #00000029" }} />
-
+                        {/* //testing */}
                     </div>
                 </div>
                 <div className="flex flex-col mb-6">
