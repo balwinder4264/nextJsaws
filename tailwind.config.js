@@ -1,53 +1,51 @@
-const color = require("./node_modules/tailwindcss/colors")
-const { default: fonts } = require("./tailwindConfig/fonts")
-
-// const fonts = require("./tailwindConfig/fonts")
-
 module.exports = {
-    mode: 'jit',
-    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-    darkMode: 'false', // or 'media' or 'class'
+    content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
     theme: {
         screens: {
-            'xs': { 'min': '0px', 'max': '696px' },
+            sm: '696px',
+            // => @media (min-width: 696px) { ... }
 
-            'sm': { 'min': '696px', 'max': '768px' },
-            // => @media (min-width: 640px and max-width: 767px) { ... }
-            'md': { 'min': '768px', 'max': '1023px' },
-            // => @media (min-width: 768px and max-width: 1023px) { ... }
+            md: '768px',
+            // => @media (min-width: 768px) { ... }
 
-            'lg': { 'min': '1024px', 'max': '1288px' },
-            // => @media (min-width: 1024px and max-width: 1279px) { ... }
+            lg: '1024px',
+            // => @media (min-width: 1024px) { ... }
 
-            'xl': { 'min': '1288px', 'max': '1599px' },
-            // => @media (min-width: 1280px and max-width: 1535px) { ... }
+            xl: '1288px',
+            // => @media (min-width: 1288px) { ... }
 
-            '2xl': { 'min': '1600px' },
+            '2xl': '1536px',
             // => @media (min-width: 1536px) { ... }
         },
-        extend: {
-            colors: {
-                "fuchsia": color.fuchsia,
-                v1: {
-                    "purple": "#2E134D",
-                    "Stone": "#F6F4F5",
-                    "tropicalViolet": "#CAB0E072",
-                    "tropicalViolet": "#CAB0E072",
-                    "Amethyst": "#9F67D1"
-                }
+        colors: {
+            transparent: 'transparent',
+            white: {
+                DEFAULT: '#ffffff',
             },
-            fontFamily: {
-                ...fonts.poppins,
-                ...fonts.nunito,
-                "Ubuntu": "'Ubuntu', 'sans-serif'",
-                "Nunito-v1": "'Nunito', 'sans-serif'",
-                "Poppins-v1": "'Poppins', 'sans-serif'",
-                // "poppins-Italic": ["poppins-Italic"]
-
+            gray: {
+                DEFAULT: '#f6f4f5',
+                dark: '#191919',
+            },
+            purple: {
+                DEFAULT: '#2E134D',
             },
         },
+        fontFamily: {
+            sans: ['Nunito', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        },
+        fontSize: {
+            xs: '.64rem',
+            sm: '.9rem',
+            base: '1rem',
+            lg: '1.125rem',
+            xl: '1.25rem',
+            '2xl': '1.52rem',
+            '3xl': '1.953rem',
+            '4xl': '2.441rem',
+            '5xl': '3.052rem',
+            '6xl': '3.815rem',
+            '7xl': '5rem',
+        },
     },
-    variants: {
-        extend: {},
-    }
+    plugins: [require('@tailwindcss/forms')],
 }
