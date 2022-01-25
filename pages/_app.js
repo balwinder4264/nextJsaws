@@ -1,10 +1,7 @@
-import MetaTags from '../components/metaTags/metatags'
-import '../styles/globals.scss'
+import '@/styles/globals.scss'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
-function Webapp({ Component, pageProps }) {
-    return <>
-        <MetaTags />
-        <Component {...pageProps} />
-    </>
+function WebApp({ Component, pageProps }) {
+    return <Component {...pageProps} />
 }
-export default Webapp
+export default WebApp
