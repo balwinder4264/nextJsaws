@@ -31,7 +31,6 @@ const Login = () => {
                 </h5>
                 <div className="mx-auto max-w-xs space-y-4">
                     <InputField
-                        type={'text'}
                         icon={faEnvelopeOpen}
                         placeholder={'Email'}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -44,7 +43,7 @@ const Login = () => {
                         onChange={(e) => setForm({ ...form, password: e.target.value })}
                     />
                     <button
-                        className="w-full rounded-xl bg-purple py-3 px-4 text-sm font-bold uppercase text-white"
+                        className="w-full rounded-xl bg-purple p-3 text-sm font-bold uppercase text-white"
                         onClick={handleLogin}
                     >
                         Sign In
