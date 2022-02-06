@@ -5,7 +5,7 @@ const Home = () => {
         router.push('/login')
 
     }
-    return <><button onClick={() => gotoLoginScreen()}> Go to login</button></>
+    return <><button onClick={() => gotoLoginScreen()}> Go to login Two</button></>
 }
 
 export default Home
