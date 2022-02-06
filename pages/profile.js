@@ -1,4 +1,3 @@
-import instance from "@/src/config/axios";
 import { destroyCookie } from "nookies"
 import { useRouter } from "next/router";
 const Profile = () => {

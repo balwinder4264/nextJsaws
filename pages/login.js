@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import Layout from '@/components/layouts/Layout'
-import { LayoutTypes } from '@/src/types/LayoutTypes'
+
 import InputField from '@/components/forms/InputField'
 import { faEnvelopeOpen, faUnlockAlt } from '@fortawesome/pro-light-svg-icons'
 import Link from 'next/link'

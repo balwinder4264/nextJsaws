@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import Layout from '@/components/layouts/Layout'
-import { LayoutTypes } from '@/src/types/LayoutTypes'
+
 import InputField from '@/components/forms/InputField'
 import { faEnvelopeOpen, faUnlockAlt, faUser } from '@fortawesome/pro-light-svg-icons'
 import Link from 'next/link'
-import Logo from '@/components/global/Logo'
 import instance from '@/src/config/axios'
 import { useRouter } from 'next/router'
 /**
@@ -30,14 +28,14 @@ const Login = () => {
         console.log("Client =>", form)
 
         try {
-            const response = await instance.put('/auth/signup',
+            await instance.put('/auth/signup',
                 form
             )
             alert("Account has been created")
             router.push("/login")
         } catch (err) {
             setError(err.response.data.message)
-            console.log(err.response.data.message)
+            // console.log(err.response.data.message)
         }
 
 
