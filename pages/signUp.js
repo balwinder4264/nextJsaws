@@ -25,7 +25,7 @@ const Login = () => {
 
     // methods
     const handleSignUp = async () => {
-        console.log("Client =>", form)
+        console.log("Client test =>", form)
 
         try {
             await instance.put('/auth/signup',
