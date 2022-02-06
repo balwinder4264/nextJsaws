@@ -5,32 +5,50 @@ import InputField from '@/components/forms/InputField'
 import { faEnvelopeOpen, faUnlockAlt, faUser } from '@fortawesome/pro-light-svg-icons'
 import Link from 'next/link'
 import Logo from '@/components/global/Logo'
-
+import instance from '@/src/config/axios'
+import { useRouter } from 'next/router'
 /**
  * SIGNUP Page
  * @returns {JSX.Element}
  * @constructor
  */
 const Login = () => {
+    const router = useRouter()
     // state
     const [form, setForm] = useState({
-        fullname: '',
+        name: '',
         email: '',
         password: '',
     })
+    const [error, setError] = useState(null)
 
     // effect
     useEffect(() => { }, [])
 
     // methods
-    const handleSignUp = async () => { }
+    const handleSignUp = async () => {
+        console.log("Client =>", form)
+
+        try {
+            const response = await instance.put('/auth/signup',
+                form
+            )
+            alert("Account has been created")
+            router.push("/login")
+        } catch (err) {
+            setError(err.response.data.message)
+            console.log(err.response.data.message)
+        }
+
+
+    }
 
     // return
     return (
-        <Layout type={LayoutTypes.AUTH}>
+        <>
             <div className="mx-auto max-w-xl space-y-6">
                 <div className="flex items-center justify-center">
-                    <Logo />
+                    {/* <Logo /> */}
                 </div>
                 <h1 className="h5 text-center">
                     Welcome to the family  <br /> Create your admin account
@@ -39,7 +57,7 @@ const Login = () => {
                     <InputField
                         icon={faUser}
                         placeholder={'Fullname'}
-                        onChange={(e) => setForm({ ...form, fullname: e.target.value })}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
                     />
                     <InputField
                         icon={faEnvelopeOpen}
@@ -53,8 +71,9 @@ const Login = () => {
                         placeholder={'Password'}
                         onChange={(e) => setForm({ ...form, password: e.target.value })}
                     />
+                    {error ? error : null}
                     <button
-                        className="w-full rounded-xl bg-purple p-3 text-sm font-bold uppercase text-white"
+                        className="w-full rounded-xl bg-red-800 p-3 text-sm font-bold uppercase text-white"
                         onClick={handleSignUp}
                     >
                         Sign Up
@@ -62,13 +81,13 @@ const Login = () => {
                     <p className="text-center">
 
                         Do you have account?{' '}
-                        <Link href="/">
+                        <Link href="/login">
                             <a className="font-bold text-purple"> Sign in</a>
                         </Link>
                     </p>
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }
 

@@ -3,11 +3,12 @@ import axios from 'axios'
 /**
  * Instance
  */
+//  "http://localhost:8080/"
 const instance = axios.create({
-    baseURL: process.env.api,
+    baseURL: process.env.api
 })
 instance.defaults.headers.common['Content-Type'] = 'application/json'
-
+// instance.defaults.headers.common['Authorization'] = 'application/json'
 /**
  * Request
  */

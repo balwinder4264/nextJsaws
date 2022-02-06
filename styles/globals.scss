@@ -11,12 +11,12 @@ Global
  */
 
 body {
-	@apply bg-gray;
+	// @apply bg-gray;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Poppins', 'Helvetica Neue', 'Arial', 'sans-serif';
-	@apply text-purple font-bold;
+	// @apply text-purple font-bold;
 }
 
 h1, .h1 { @apply text-6xl font-bold }

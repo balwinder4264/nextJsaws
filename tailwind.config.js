@@ -17,19 +17,7 @@ module.exports = {
             '2xl': '1536px',
             // => @media (min-width: 1536px) { ... }
         },
-        colors: {
-            transparent: 'transparent',
-            white: {
-                DEFAULT: '#ffffff',
-            },
-            gray: {
-                DEFAULT: '#f6f4f5',
-                dark: '#191919',
-            },
-            purple: {
-                DEFAULT: '#2E134D',
-            },
-        },
+
         fontFamily: {
             sans: ['Nunito', 'Helvetica Neue', 'Arial', 'sans-serif'],
         },
@@ -45,6 +33,21 @@ module.exports = {
             '5xl': '3.052rem',
             '6xl': '3.815rem',
             '7xl': '5rem',
+        },
+    },
+    extends: {
+        colors: {
+            transparent: 'transparent',
+            white: {
+                DEFAULT: '#ffffff',
+            },
+            gray: {
+                DEFAULT: '#f6f4f5',
+                dark: '#191919',
+            },
+            purple: {
+                DEFAULT: '#2E134D',
+            },
         },
     },
     plugins: [require('@tailwindcss/forms')],
