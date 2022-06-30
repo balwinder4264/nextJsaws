@@ -18,15 +18,12 @@ export const AuthProvider = ({ children }) => {
         // console.log("token=>", token.token)
         // return
         try {
-            console.log("token=>", token.token)
             const response = await instance.get("/auth/status", {
                 headers: {
                     "Authorization": `Barrer ${token.token}`
                 }
             });
-            console.log(response)
             if (response) {
-
                 setCurrentUser(response.data.userInfo)
             }
             router.push('/profile')
