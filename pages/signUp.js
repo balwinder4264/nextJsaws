@@ -19,11 +19,7 @@ const Login = () => {
         password: '',
     })
     const [error, setError] = useState(null)
-
-    // effect
     useEffect(() => { }, [])
-
-    // methods
     const handleSignUp = async () => {
         try {
             await instance.put('/auth/signup',
@@ -35,10 +31,7 @@ const Login = () => {
             setError(err.response.data.message)
             // console.log(err.response.data.message)
         }
-
-
     }
-
     // return
     return (
         <>
